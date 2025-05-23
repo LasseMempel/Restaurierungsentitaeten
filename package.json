@@ -10,13 +10,14 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:frontend": "cd frontend && npm run dev",
-    "dev:backend": "cd backend && uvicorn app.main:app --reload",
+    "dev:backend": "cd backend && conda run -n restaurierungsentitaeten uvicorn app.main:app --reload",
+    "setup:backend": "cd backend && conda env create -f environment.yml",
     "build": "npm run build:frontend && npm run build:backend",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && echo 'Backend build placeholder'",
     "test": "npm run test:frontend && npm run test:backend",
     "test:frontend": "cd frontend && npm run test",
-    "test:backend": "cd backend && pytest",
+    "test:backend": "cd backend && conda run -n restaurierungsentitaeten pytest",
     "lint": "npm run lint:frontend",
     "lint:frontend": "cd frontend && npm run lint"
   },

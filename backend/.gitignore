@@ -1,0 +1,6 @@
+# Conda
+.conda/
+*.conda
+
+# But keep environment.yml
+!environment.yml

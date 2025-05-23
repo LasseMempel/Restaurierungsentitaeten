@@ -1,0 +1,50 @@
+name: restaurierungsentitaeten
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  # Python
+  - python=3.10
+  
+  # Web framework
+  - fastapi=0.104.*
+  - uvicorn=0.24.*
+  
+  # Database
+  - sqlalchemy=2.0.*
+  - alembic=1.12.*
+  
+  # Data validation
+  - pydantic=2.5.*
+  
+  # ML dependencies (conda handles these better)
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - transformers
+  - spacy
+  - numpy
+  
+  # Other dependencies
+  - httpx
+  - python-multipart
+  - rdflib
+  
+  # Development tools
+  - pytest
+  - pytest-asyncio
+  - black
+  - isort
+  - flake8
+  - mypy
+  
+  # Pip dependencies (things not available in conda)
+  - pip
+  - pip:
+    - gliner
+    - pydantic-settings
+    - python-jose[cryptography]
+    - passlib[bcrypt]
+    - pytest-cov
+    - pre-commit
